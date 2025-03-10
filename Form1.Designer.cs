@@ -34,15 +34,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.textCm = new System.Windows.Forms.TextBox();
+            this.textM = new System.Windows.Forms.TextBox();
+            this.textKm = new System.Windows.Forms.TextBox();
+            this.textIn = new System.Windows.Forms.TextBox();
+            this.textFt = new System.Windows.Forms.TextBox();
+            this.textYard = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textInfo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -108,57 +108,57 @@
             this.label6.Text = "英尺";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // button1
+            // btnClear
             // 
-            this.button1.Location = new System.Drawing.Point(147, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 49);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "清除";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnClear.Location = new System.Drawing.Point(147, 31);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(102, 49);
+            this.btnClear.TabIndex = 6;
+            this.btnClear.Text = "清除";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textCm
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 132);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(83, 25);
-            this.textBox1.TabIndex = 7;
+            this.textCm.Location = new System.Drawing.Point(147, 132);
+            this.textCm.Name = "textCm";
+            this.textCm.Size = new System.Drawing.Size(83, 25);
+            this.textCm.TabIndex = 7;
             // 
-            // textBox2
+            // textM
             // 
-            this.textBox2.Location = new System.Drawing.Point(305, 132);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(83, 25);
-            this.textBox2.TabIndex = 8;
+            this.textM.Location = new System.Drawing.Point(305, 132);
+            this.textM.Name = "textM";
+            this.textM.Size = new System.Drawing.Size(83, 25);
+            this.textM.TabIndex = 8;
             // 
-            // textBox3
+            // textKm
             // 
-            this.textBox3.Location = new System.Drawing.Point(457, 132);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(83, 25);
-            this.textBox3.TabIndex = 9;
+            this.textKm.Location = new System.Drawing.Point(457, 132);
+            this.textKm.Name = "textKm";
+            this.textKm.Size = new System.Drawing.Size(83, 25);
+            this.textKm.TabIndex = 9;
             // 
-            // textBox4
+            // textIn
             // 
-            this.textBox4.Location = new System.Drawing.Point(147, 222);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(83, 25);
-            this.textBox4.TabIndex = 10;
+            this.textIn.Location = new System.Drawing.Point(147, 222);
+            this.textIn.Name = "textIn";
+            this.textIn.Size = new System.Drawing.Size(83, 25);
+            this.textIn.TabIndex = 10;
             // 
-            // textBox5
+            // textFt
             // 
-            this.textBox5.Location = new System.Drawing.Point(305, 222);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(83, 25);
-            this.textBox5.TabIndex = 11;
+            this.textFt.Location = new System.Drawing.Point(305, 222);
+            this.textFt.Name = "textFt";
+            this.textFt.Size = new System.Drawing.Size(83, 25);
+            this.textFt.TabIndex = 11;
             // 
-            // textBox6
+            // textYard
             // 
-            this.textBox6.Location = new System.Drawing.Point(457, 222);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(83, 25);
-            this.textBox6.TabIndex = 12;
+            this.textYard.Location = new System.Drawing.Point(457, 222);
+            this.textYard.Name = "textYard";
+            this.textYard.Size = new System.Drawing.Size(83, 25);
+            this.textYard.TabIndex = 12;
             // 
             // label7
             // 
@@ -171,27 +171,28 @@
             this.label7.Text = "說明文字";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // textBox7
+            // textInfo
             // 
-            this.textBox7.Location = new System.Drawing.Point(147, 311);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(393, 25);
-            this.textBox7.TabIndex = 14;
+            this.textInfo.Location = new System.Drawing.Point(147, 311);
+            this.textInfo.Name = "textInfo";
+            this.textInfo.Size = new System.Drawing.Size(393, 25);
+            this.textInfo.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textInfo);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textYard);
+            this.Controls.Add(this.textFt);
+            this.Controls.Add(this.textIn);
+            this.Controls.Add(this.textKm);
+            this.Controls.Add(this.textM);
+            this.Controls.Add(this.textCm);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -214,15 +215,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox textCm;
+        private System.Windows.Forms.TextBox textM;
+        private System.Windows.Forms.TextBox textKm;
+        private System.Windows.Forms.TextBox textIn;
+        private System.Windows.Forms.TextBox textFt;
+        private System.Windows.Forms.TextBox textYard;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textInfo;
     }
 }
 
