@@ -124,6 +124,7 @@
             this.textCm.Name = "textCm";
             this.textCm.Size = new System.Drawing.Size(83, 25);
             this.textCm.TabIndex = 7;
+            this.textCm.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textCm_KeyUp);
             // 
             // textM
             // 
