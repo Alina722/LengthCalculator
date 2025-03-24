@@ -61,15 +61,10 @@ namespace HappyWorld
             strInput = textCm.Text;
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                textM.Text = string.Format("{0:0.##########}", douOutput / 100);
-                textKm.Text = string.Format("{0:0.##########}", douOutput / 100000);
-                textIn.Text = string.Format("{0:0.##########}", douOutput / 2.54);
-                textFt.Text = string.Format("{0:0.##########}", douOutput / 30.48);
-                textYard.Text = string.Format("{0:0.##########}", douOutput / 91.44);
+                CaculateAnswer(0, douOutput);
             }
             else
             {
-                // 如果無法轉型，則是在說明文字中顯示錯誤訊息，並且將txtCM文字框清除
                 textInfo.Text = "請輸入數字";
                 textCm.Text = "";
             }
@@ -80,11 +75,7 @@ namespace HappyWorld
             strInput = textM.Text;
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                textCm.Text = string.Format("{0:0.##########}", douOutput / 0.01);
-                textKm.Text = string.Format("{0:0.##########}", douOutput / 1000);
-                textIn.Text = string.Format("{0:0.##########}", douOutput / 0.0254);
-                textFt.Text = string.Format("{0:0.##########}", douOutput / 0.3048);
-                textYard.Text = string.Format("{0:0.##########}", douOutput / 0.9144);
+                CaculateAnswer(1, douOutput * 100);
             }
             else
             {
@@ -98,11 +89,7 @@ namespace HappyWorld
             strInput = textKm.Text;
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                textCm.Text = string.Format("{0:0.##########}", douOutput / 0.00001);
-                textM.Text = string.Format("{0:0.##########}", douOutput / 0.001);
-                textIn.Text = string.Format("{0:0.##########}", douOutput / 0.0000254);
-                textFt.Text = string.Format("{0:0.##########}", douOutput / 0.0003048);
-                textYard.Text = string.Format("{0:0.##########}", douOutput / 0.0009144);
+                CaculateAnswer(2, douOutput * 100000);
             }
             else
             {
@@ -116,11 +103,7 @@ namespace HappyWorld
             strInput = textIn.Text;
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                textCm.Text = string.Format("{0:0.##########}", douOutput * 2.54);
-                textM.Text = string.Format("{0:0.##########}", douOutput * 0.0254);
-                textKm.Text = string.Format("{0:0.##########}", douOutput * 0.0000254);
-                textFt.Text = string.Format("{0:0.##########}", douOutput * 0.0833);
-                textYard.Text = string.Format("{0:0.##########}", douOutput * 0.0278);
+                CaculateAnswer(3, douOutput * 2.54);
             }
             else
             {
@@ -134,11 +117,7 @@ namespace HappyWorld
             strInput = textFt.Text;
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                textCm.Text = string.Format("{0:0.##########}", douOutput * 30.48);
-                textM.Text = string.Format("{0:0.##########}", douOutput * 0.3048);
-                textKm.Text = string.Format("{0:0.##########}", douOutput * 0.0003048);
-                textIn.Text = string.Format("{0:0.##########}", douOutput * 12);
-                textYard.Text = string.Format("{0:0.##########}", douOutput * 0.3333);
+                CaculateAnswer(4, douOutput * 30.48);
             }
             else
             {
@@ -152,17 +131,28 @@ namespace HappyWorld
             strInput = textYard.Text;
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                textCm.Text = string.Format("{0:0.##########}", douOutput * 91.44);
-                textM.Text = string.Format("{0:0.##########}", douOutput * 0.9144);
-                textKm.Text = string.Format("{0:0.##########}", douOutput * 0.0009144);
-                textIn.Text = string.Format("{0:0.##########}", douOutput * 36);
-                textFt.Text = string.Format("{0:0.##########}", douOutput * 3);
+                CaculateAnswer(4, douOutput * 91.44);
             }
             else
             {
                 textInfo.Text = "請輸入數字";
                 textYard.Text = "";
             }
+        }
+        private void CaculateAnswer(int _kind, double _value)
+        {
+            if (_kind != 0)
+                textCm.Text = string.Format("{0:0.##########}", _value);
+            if (_kind != 1)
+                textM.Text = string.Format("{0:0.##########}", _value / 100);
+            if (_kind != 2)
+                textKm.Text = string.Format("{0:0.##########}", _value / 100000);
+            if (_kind != 3)
+                textIn.Text = string.Format("{0:0.##########}", _value / 2.54);
+            if (_kind != 4)
+                textFt.Text = string.Format("{0:0.##########}", _value / 30.48);
+            if (_kind != 5)
+                textYard.Text = string.Format("{0:0.##########}", _value / 91.44);
         }
     }
 }
