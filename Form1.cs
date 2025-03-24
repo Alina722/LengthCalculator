@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace HappyWorld
         {
             InitializeComponent();
         }
+        string strInput;
+        double douOutput;
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -44,83 +47,122 @@ namespace HappyWorld
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            textCm.Text = "";
+            textM.Text = "";
+            textKm.Text = "";
+            textIn.Text = "";
+            textFt.Text = "";
+            textYard.Text = "";
         }
 
         private void textCm_KeyUp(object sender, KeyEventArgs e)
         {
-            double douCM; //宣告一個double變數，變數名稱叫douCM
 
-            douCM = Convert.ToDouble(textCm.Text); //從txtCM輸入文字框取得輸入的文字，並且轉換成double的資料型態
-
-            textM.Text = string.Format("{0:0.##########}", douCM / 100);
-            textKm.Text = string.Format("{0:0.##########}", douCM / 10000);
-            textIn.Text = string.Format("{0:0.##########}", douCM / 2.54);
-            textFt.Text = string.Format("{0:0.##########}", douCM / 30.48);
-            textYard.Text = string.Format("{0:0.##########}", douCM / 91.44);
-            //將douCM的數值除以100，也就是從公分轉換成公尺
-            //透過string.Format格式化成小數點後共10位的數字，轉型成文字型態，在txtM顯示結果
+            strInput = textCm.Text;
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                textM.Text = string.Format("{0:0.##########}", douOutput / 100);
+                textKm.Text = string.Format("{0:0.##########}", douOutput / 100000);
+                textIn.Text = string.Format("{0:0.##########}", douOutput / 2.54);
+                textFt.Text = string.Format("{0:0.##########}", douOutput / 30.48);
+                textYard.Text = string.Format("{0:0.##########}", douOutput / 91.44);
+            }
+            else
+            {
+                // 如果無法轉型，則是在說明文字中顯示錯誤訊息，並且將txtCM文字框清除
+                textInfo.Text = "請輸入數字";
+                textCm.Text = "";
+            }
         }
 
         private void textM_KeyUp(object sender, KeyEventArgs e)
         {
-            double douM; 
-
-            douM = Convert.ToDouble(textM.Text); 
-
-            textCm.Text = string.Format("{0:0.##########}", douM / 0.01);
-            textKm.Text = string.Format("{0:0.##########}", douM / 1000);
-            textIn.Text = string.Format("{0:0.##########}", douM / 0.0254);
-            textFt.Text = string.Format("{0:0.##########}", douM / 0.3048);
-            textYard.Text = string.Format("{0:0.##########}", douM / 0.9144);
+            strInput = textM.Text;
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                textCm.Text = string.Format("{0:0.##########}", douOutput / 0.01);
+                textKm.Text = string.Format("{0:0.##########}", douOutput / 1000);
+                textIn.Text = string.Format("{0:0.##########}", douOutput / 0.0254);
+                textFt.Text = string.Format("{0:0.##########}", douOutput / 0.3048);
+                textYard.Text = string.Format("{0:0.##########}", douOutput / 0.9144);
+            }
+            else
+            {
+                textInfo.Text = "請輸入數字";
+                textM.Text = "";
+            }
         }
 
         private void textKm_KeyUp(object sender, KeyEventArgs e)
         {
-            double douKm; 
-            douKm = Convert.ToDouble(textKm.Text); 
-
-            textCm.Text = string.Format("{0:0.##########}", douKm / 0.00001);
-            textM.Text = string.Format("{0:0.##########}", douKm / 0.001);
-            textIn.Text = string.Format("{0:0.##########}", douKm / 0.0000254);
-            textFt.Text = string.Format("{0:0.##########}", douKm / 0.0003048);
-            textYard.Text = string.Format("{0:0.##########}", douKm / 0.0009144);
+            strInput = textKm.Text;
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                textCm.Text = string.Format("{0:0.##########}", douOutput / 0.00001);
+                textM.Text = string.Format("{0:0.##########}", douOutput / 0.001);
+                textIn.Text = string.Format("{0:0.##########}", douOutput / 0.0000254);
+                textFt.Text = string.Format("{0:0.##########}", douOutput / 0.0003048);
+                textYard.Text = string.Format("{0:0.##########}", douOutput / 0.0009144);
+            }
+            else
+            {
+                textInfo.Text = "請輸入數字";
+                textKm.Text = "";
+            }
         }
 
         private void textIn_KeyUp(object sender, KeyEventArgs e)
         {
-            double douIn;
-            douIn = Convert.ToDouble(textIn.Text);
-
-            textCm.Text = string.Format("{0:0.##########}", douIn * 2.54);
-            textM.Text = string.Format("{0:0.##########}", douIn * 0.0254);
-            textKm.Text = string.Format("{0:0.##########}", douIn * 0.0000254);
-            textFt.Text = string.Format("{0:0.##########}", douIn * 0.0833);
-            textYard.Text = string.Format("{0:0.##########}", douIn * 0.0278);
+            strInput = textIn.Text;
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                textCm.Text = string.Format("{0:0.##########}", douOutput * 2.54);
+                textM.Text = string.Format("{0:0.##########}", douOutput * 0.0254);
+                textKm.Text = string.Format("{0:0.##########}", douOutput * 0.0000254);
+                textFt.Text = string.Format("{0:0.##########}", douOutput * 0.0833);
+                textYard.Text = string.Format("{0:0.##########}", douOutput * 0.0278);
+            }
+            else
+            {
+                textInfo.Text = "請輸入數字";
+                textIn.Text = "";
+            }
         }
 
         private void textFt_KeyUp(object sender, KeyEventArgs e)
         {
-            double douFt;
-            douFt = Convert.ToDouble(textFt.Text);
-
-            textCm.Text = string.Format("{0:0.##########}", douFt * 30.48);
-            textM.Text = string.Format("{0:0.##########}", douFt * 0.3048);
-            textKm.Text = string.Format("{0:0.##########}", douFt * 0.0003048);
-            textIn.Text = string.Format("{0:0.##########}", douFt * 12);
-            textYard.Text = string.Format("{0:0.##########}", douFt * 0.3333);
+            strInput = textFt.Text;
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                textCm.Text = string.Format("{0:0.##########}", douOutput * 30.48);
+                textM.Text = string.Format("{0:0.##########}", douOutput * 0.3048);
+                textKm.Text = string.Format("{0:0.##########}", douOutput * 0.0003048);
+                textIn.Text = string.Format("{0:0.##########}", douOutput * 12);
+                textYard.Text = string.Format("{0:0.##########}", douOutput * 0.3333);
+            }
+            else
+            {
+                textInfo.Text = "請輸入數字";
+                textFt.Text = "";
+            }
         }
 
         private void textYard_KeyUp(object sender, KeyEventArgs e)
         {
-            double douYard;
-            douYard = Convert.ToDouble(textYard.Text);
-
-            textCm.Text = string.Format("{0:0.##########}", douYard * 91.44);
-            textM.Text = string.Format("{0:0.##########}", douYard * 0.9144);
-            textKm.Text = string.Format("{0:0.##########}", douYard * 0.0009144);
-            textIn.Text = string.Format("{0:0.##########}", douYard * 36);
-            textFt.Text = string.Format("{0:0.##########}", douYard * 3);
+            strInput = textYard.Text;
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                textCm.Text = string.Format("{0:0.##########}", douOutput * 91.44);
+                textM.Text = string.Format("{0:0.##########}", douOutput * 0.9144);
+                textKm.Text = string.Format("{0:0.##########}", douOutput * 0.0009144);
+                textIn.Text = string.Format("{0:0.##########}", douOutput * 36);
+                textFt.Text = string.Format("{0:0.##########}", douOutput * 3);
+            }
+            else
+            {
+                textInfo.Text = "請輸入數字";
+                textYard.Text = "";
+            }
         }
     }
 }
